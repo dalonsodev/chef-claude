@@ -177,4 +177,10 @@ h2.chef-recomends-line {
       width: 100%;
       padding-block: .75em;
    }
+   .ingredients-list-container > h2 {
+      margin: 2.5em 0 0;
+   }
+   ul.ingredients-list {
+      margin: 0.5em 0 1.5em;
+   }
 }
