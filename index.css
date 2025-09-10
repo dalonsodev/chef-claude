@@ -38,11 +38,29 @@ header {
    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 
-header > img {
+.header-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.header-link:hover {
+  opacity: 0.8;
+}
+
+.header-link:active {
+  transform: scale(0.98);
+}
+
+.header-link > img {
    width: 50px;
 }
 
-header > h1 {
+.header-link > h1 {
    font-weight: 400;
 }
 
