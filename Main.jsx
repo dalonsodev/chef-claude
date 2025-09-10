@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import IngredientsList from "./components/IngredientsList"
 import ClaudeRecipe from "./components/ClaudeRecipe"
 import { getRecipeFromMistral, getMockRecipe } from "./ai"
@@ -6,11 +6,23 @@ import { getRecipeFromMistral, getMockRecipe } from "./ai"
 export default function Main() {
    const [ingredients, setIngredients] = React.useState([])
    const [recipe, setRecipe] = React.useState("")
+   const recipeRef = useRef(null)
 
    async function getRecipe() {
       const recipeMarkdown = await getRecipeFromMistral(ingredients)
       setRecipe(recipeMarkdown)
    }
+
+   useEffect(() => {
+      if (recipe && recipeRef.current) {
+         setTimeout(() => {
+            recipeRef.current.scrollIntoView({
+               behavior: "smooth",
+               block: "start"
+            })
+         }, 100)
+      }
+   }, [recipe])
 
    function handleSubmit(e) {
       e.preventDefault()
@@ -42,8 +54,9 @@ export default function Main() {
                getRecipe={getRecipe}
             />
          }
-
-         {recipe && <ClaudeRecipe recipe={recipe} />}
+         <div ref={recipeRef}>
+            {recipe && <ClaudeRecipe recipe={recipe} />}
+         </div>
       </main>
    )
 }
