@@ -22,7 +22,6 @@ button {
    
 div#root {
    width: 100%;
-   max-width: 600px;
 }
 
 header {
@@ -44,8 +43,9 @@ header > h1 {
 }
 
 main {
+   margin: 0 auto;
    padding: 30px 30px 10px;
-   max-width: 850px;
+   max-width: 650px;
 }
 
 .add-ingredient-form {
@@ -158,4 +158,23 @@ h2.chef-recomends-line {
 
 .suggested-recipe-container ul, ol {
    margin-top: 0.5em;
+}
+
+@media (max-width:450px) {
+   .add-ingredient-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 2em;
+   }
+   .add-ingredient-form > input {
+      font-size: 16px; /* to prevent auto-zoom on iOS */
+      width: 100%;
+   }
+   .add-ingredient-form > button {
+      width: 100%;
+      padding-block: .75em;
+   }
 }
