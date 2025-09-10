@@ -1,0 +1,21 @@
+{
+   "name": "chef-claude",
+   "description": "https://scrimba.com/frontend-path-c0j/~04x6/s05psh6qg3/head",
+   "scripts": {
+      "start": "vite",
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
+   },
+   "dependencies": {
+      "@anthropic-ai/sdk": "0.27.3",
+      "@huggingface/inference": "^2.8.1",
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1",
+      "react-markdown": "9.0.1",
+      "vite": "latest"
+   },
+   "devDependencies": {
+      "@vitejs/plugin-react": "*"
+   }
+}
